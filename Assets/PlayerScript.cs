@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public Rigidbody rb;
-    public float moveSpeed= 1.0f;
-    public float jumpSpeed= 1.0f;
+    public float moveSpeed = 1.0f;
+    public float jumpSpeed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         {
             v.y = jumpSpeed;
         }
-        
+
         rb.velocity = v;
     }
 
