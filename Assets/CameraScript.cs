@@ -8,12 +8,7 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var playerPosition = player.transform.position;
-        var position = transform.position;
-        position.x = playerPosition.x;
-        position.y = playerPosition.y+2;
-        position.z = playerPosition.z-8;
-        transform.position = position;
+      
     }
 
     // Update is called once per frame
@@ -23,7 +18,7 @@ public class CameraScript : MonoBehaviour
         var position = transform.position;
         position.x = playerPosition.x;
         position.y = playerPosition.y + 2;
-        position.z = playerPosition.z - 8;
+        position.z = playerPosition.z - 12;
         transform.position = position;
     }
 }
