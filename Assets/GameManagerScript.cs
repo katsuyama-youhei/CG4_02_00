@@ -18,6 +18,8 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject block;
 
+    public GameObject goal;
+
     public TextAsset stageCSV;
 
     private List<List<string>> data = new List<List<string>>();
@@ -38,6 +40,9 @@ public class GameManagerScript : MonoBehaviour
                 if (map[y, x] == (int)Stage.Block)
                 {
                     Instantiate(block, position, Quaternion.identity);
+                }else if (map[y, x] == (int)Stage.Goal)
+                {
+                    goal.transform.position = position;
                 }
             }
         }
