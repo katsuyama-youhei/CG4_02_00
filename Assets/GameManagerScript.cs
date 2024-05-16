@@ -27,6 +27,8 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1980, 1080, false);
+
         Vector3 position = Vector3.zero;
         LoadCSV();
         int lenY = map.GetLength(0);
