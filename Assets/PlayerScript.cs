@@ -17,12 +17,23 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
+        if (GoalScript.isGameClear == false)
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (GoalScript.isGameClear == false)
+        {
+            Move();
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
+
     }
 
     void Move()
