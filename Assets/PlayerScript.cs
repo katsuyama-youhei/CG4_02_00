@@ -20,23 +20,29 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GoalScript.isGameClear == false)
-        {
-            Jump();
-        }
+
         // ƒŒƒC‚ð‰º•ûŒü‚É”ò‚Î‚·
         Vector3 rayPosition = transform.position;
         Ray ray = new Ray(rayPosition, Vector3.down);
         //Debug.DrawRay(rayPosition, Vector3.down * distance, Color.red);
         isCollisionBlock = Physics.Raycast(ray, distance);
-      /*  if (isCollisionBlock)
+
+        if (GoalScript.isGameClear == false)
         {
-            Debug.DrawRay(rayPosition, Vector3.down * distance, Color.red);
+            if (isCollisionBlock)
+            {
+                Jump();
+            }
         }
-        else
-        {
-            Debug.DrawRay(rayPosition, Vector3.down * distance, Color.yellow);
-        }*/
+
+        /*  if (isCollisionBlock)
+          {
+              Debug.DrawRay(rayPosition, Vector3.down * distance, Color.red);
+          }
+          else
+          {
+              Debug.DrawRay(rayPosition, Vector3.down * distance, Color.yellow);
+          }*/
     }
 
     private void FixedUpdate()
@@ -79,6 +85,14 @@ public class PlayerScript : MonoBehaviour
         }
 
         rb.velocity = v;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "COIN")
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 
 }
