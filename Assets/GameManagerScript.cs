@@ -21,6 +21,8 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject goal;
 
+    public GameObject coin;
+
     public TextAsset stageCSV;
 
     private List<List<string>> data = new List<List<string>>();
@@ -46,6 +48,10 @@ public class GameManagerScript : MonoBehaviour
                 }else if (map[y, x] == (int)Stage.Goal)
                 {
                     goal.transform.position = position;
+                }else if (map[y, x] == (int)Stage.Coin)
+                {
+                    Quaternion prefabRotation = coin.transform.rotation;
+                    Instantiate(coin, position, prefabRotation);
                 }
             }
         }
