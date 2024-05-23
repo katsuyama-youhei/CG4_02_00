@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -25,12 +27,18 @@ public class GameManagerScript : MonoBehaviour
 
     public TextAsset stageCSV;
 
+    public TextMeshProUGUI scoreText;
+
+    public static int score = 0;
+
     private List<List<string>> data = new List<List<string>>();
 
     // Start is called before the first frame update
     void Start()
     {
         Screen.SetResolution(1980, 1080, false);
+
+        score = 0;
 
         Vector3 position = Vector3.zero;
         LoadCSV();
@@ -68,6 +76,8 @@ public class GameManagerScript : MonoBehaviour
                 SceneManager.LoadScene("Title");
             }
         }
+
+        scoreText.text = "SCORE" + score;
     }
 
 

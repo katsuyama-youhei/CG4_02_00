@@ -91,6 +91,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == "COIN")
         {
+            GameManagerScript.score += 1;
             other.gameObject.SetActive(false);
         }
     }
