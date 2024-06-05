@@ -11,10 +11,13 @@ public class PlayerScript : MonoBehaviour
     // ray—p
     float distance = 0.6f;
     private bool isCollisionBlock = true;
+
+    // SE—p
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -92,6 +95,7 @@ public class PlayerScript : MonoBehaviour
         if (other.gameObject.tag == "COIN")
         {
             GameManagerScript.score += 1;
+            audioSource.Play();
             other.gameObject.SetActive(false);
         }
     }

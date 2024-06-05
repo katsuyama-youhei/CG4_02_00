@@ -25,7 +25,7 @@ public class TitleScript : MonoBehaviour
 
         // タイマーにより文字が点滅
         timer++;
-        if(timer % 100 > 50)
+        if(timer %  500 > 300)
         {
             hitKey.SetActive(false);
         }
