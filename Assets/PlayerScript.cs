@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -64,18 +65,16 @@ public class PlayerScript : MonoBehaviour
     void Move()
     {
         Vector3 v = rb.velocity;
-        if (Input.GetKey(KeyCode.RightArrow))
+        float move = Input.GetAxis("Horizontal") + Input.GetAxis("Horizontal_Alt");
+        if (move > 0)
         {
-            v.x = moveSpeed;
+            move = 1;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (move < 0)
         {
-            v.x = -moveSpeed;
+            move = -1;
         }
-        else
-        {
-            v.x = 0;
-        }
+        v.x = moveSpeed * move;
         rb.velocity = v;
     }
 
