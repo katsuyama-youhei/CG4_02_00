@@ -65,15 +65,8 @@ public class PlayerScript : MonoBehaviour
     void Move()
     {
         Vector3 v = rb.velocity;
-        float move = Input.GetAxis("Horizontal") + Input.GetAxis("Horizontal_Alt");
-        if (move > 0)
-        {
-            move = 1;
-        }
-        else if (move < 0)
-        {
-            move = -1;
-        }
+        float move = Input.GetAxis("Horizontal");
+        
         v.x = moveSpeed * move;
         rb.velocity = v;
     }
@@ -81,6 +74,10 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         Vector3 v = rb.velocity;
+        if (Input.GetButtonDown("Jump"))
+        {
+            v.y = jumpSpeed;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             v.y = jumpSpeed;
