@@ -1081,7 +1081,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708556201}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -1156,7 +1156,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1209,7 +1209,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1263,7 +1263,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.77095944, g: 0.91611195, b: 0.9339623, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5793,7 +5793,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1783031171
 GameObject:
@@ -6059,6 +6059,7 @@ MonoBehaviour:
   stageCSV: {fileID: 4900000, guid: 31b1631ea6baf3b4da5d89843fe91417, type: 3}
   scoreText: {fileID: 981454310}
   goalParticle: {fileID: 1708556201}
+  BG: {fileID: 4907022802268978282, guid: 96d6861b7e5f5324f88e5d1c6df45c68, type: 3}
 --- !u!4 &1793242974
 Transform:
   m_ObjectHideFlags: 0
@@ -6227,60 +6228,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &9127299947569568909
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934904, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9127299948208934911, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
-      propertyPath: m_Name
-      value: BombParticle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}

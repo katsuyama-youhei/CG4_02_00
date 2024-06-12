@@ -35,6 +35,8 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject goalParticle;
 
+    public GameObject BG;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,15 +45,18 @@ public class GameManagerScript : MonoBehaviour
         score = 0;
 
         Vector3 position = Vector3.zero;
+        Vector3 BGPosition =  new Vector3(0.0f,0.0f,3.0f);
         LoadCSV();
         int lenY = map.GetLength(0);
         int lenX = map.GetLength(1);
         for (int x = 0; x < lenX; x++)
         {
             position.x = x;
+            BGPosition.x = x;
             for (int y = 0; y < lenY; y++)
             {
                 position.y = -y + 5;
+                BGPosition.y = -y + 5;
                 if (map[y, x] == (int)Stage.Block)
                 {
                     Instantiate(block, position, Quaternion.identity);
@@ -64,6 +69,8 @@ public class GameManagerScript : MonoBehaviour
                     Quaternion prefabRotation = coin.transform.rotation;
                     Instantiate(coin, position, prefabRotation);
                 }
+
+                Instantiate(BG, BGPosition, Quaternion.identity);
             }
         }
 
