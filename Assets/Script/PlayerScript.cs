@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        transform.rotation = Quaternion.Euler(0,90,0);
     }
 
     // Update is called once per frame
@@ -70,6 +71,15 @@ public class PlayerScript : MonoBehaviour
         Vector3 v = rb.velocity;
         float move = Input.GetAxis("Horizontal");
         
+        if(move < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else if(move > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+        }
+
         v.x = moveSpeed * move;
         rb.velocity = v;
     }
