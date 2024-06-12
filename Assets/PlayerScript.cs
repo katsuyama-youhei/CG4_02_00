@@ -16,6 +16,9 @@ public class PlayerScript : MonoBehaviour
     // SE—p
     private AudioSource audioSource;
     // Start is called before the first frame update
+
+    public GameObject bombParticle;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -93,6 +96,7 @@ public class PlayerScript : MonoBehaviour
             GameManagerScript.score += 1;
             audioSource.Play();
             other.gameObject.SetActive(false);
+            Instantiate(bombParticle,transform.position, Quaternion.identity);
         }
     }
 

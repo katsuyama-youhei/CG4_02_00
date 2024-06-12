@@ -33,6 +33,8 @@ public class GameManagerScript : MonoBehaviour
 
     private List<List<string>> data = new List<List<string>>();
 
+    public GameObject goalParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,7 @@ public class GameManagerScript : MonoBehaviour
                 }else if (map[y, x] == (int)Stage.Goal)
                 {
                     goal.transform.position = position;
+                    goalParticle.transform.position = position;
                 }else if (map[y, x] == (int)Stage.Coin)
                 {
                     Quaternion prefabRotation = coin.transform.rotation;
