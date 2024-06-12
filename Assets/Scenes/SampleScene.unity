@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3
+      value: -13.48553
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalPosition.z
@@ -181,6 +181,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6d258c8f53b457f49aec2b6fcd433238, type: 2}
+    - target: {fileID: 11400000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5907,6 +5927,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 10
   bombParticle: {fileID: 9127299948208934911, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
+  animator: {fileID: 0}
 --- !u!82 &1783031178
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6074,6 +6095,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 10
   bombParticle: {fileID: 9127299948208934911, guid: 29d93fa3908c22f4ca75f6f0350f7705, type: 3}
+  animator: {fileID: 1808208140}
 --- !u!136 &1808208135
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6081,13 +6103,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808208133}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5f36c380a35b91647b964194450c23f7, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.5125086
+  m_Height: 1.6
   m_Direction: 1
-  m_Center: {x: 0, y: 0.74178874, z: -0}
+  m_Center: {x: 0, y: 0.8, z: -0}
 --- !u!54 &1808208136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6104,6 +6126,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 88
   m_CollisionDetection: 0
+--- !u!95 &1808208140 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+  m_PrefabInstance: {fileID: 352509669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1808208142
 AudioSource:
   m_ObjectHideFlags: 0

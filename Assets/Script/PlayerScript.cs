@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     public float jumpSpeed = 1.0f;
 
     // ray—p
-    float distance = 0.6f;
+    float distance = 0.72f;
     private bool isCollisionBlock = true;
 
     // SE—p
@@ -19,10 +19,12 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject bombParticle;
 
+    public Animator animator;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        transform.rotation = Quaternion.Euler(0,90,0);
+        transform.rotation = Quaternion.Euler(0, 90, 0);
     }
 
     // Update is called once per frame
@@ -30,9 +32,9 @@ public class PlayerScript : MonoBehaviour
     {
 
         // ƒŒƒC‚ð‰º•ûŒü‚É”ò‚Î‚·
-        Vector3 rayPosition = transform.position;
+        Vector3 rayPosition = transform.position+ new Vector3(0.0f,0.7f,0.0f);
         Ray ray = new Ray(rayPosition, Vector3.down);
-        //Debug.DrawRay(rayPosition, Vector3.down * distance, Color.red);
+       // Debug.DrawRay(rayPosition, Vector3.down * distance, Color.red);
         isCollisionBlock = Physics.Raycast(ray, distance);
 
         if (GoalScript.isGameClear == false)
@@ -40,6 +42,11 @@ public class PlayerScript : MonoBehaviour
             if (isCollisionBlock)
             {
                 Jump();
+                Debug.Log("Hit");
+            }
+            else
+            {
+                animator.SetBool("jump", false);
             }
         }
 
@@ -70,14 +77,20 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 v = rb.velocity;
         float move = Input.GetAxis("Horizontal");
-        
-        if(move < 0)
+
+        if (move < 0)
         {
             transform.rotation = Quaternion.Euler(0, -90, 0);
+            animator.SetBool("mode", true);
         }
-        else if(move > 0)
+        else if (move > 0)
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);
+            animator.SetBool("mode", true);
+        }
+        else
+        {
+            animator.SetBool("mode", false);
         }
 
         v.x = moveSpeed * move;
@@ -87,13 +100,11 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         Vector3 v = rb.velocity;
-        if (Input.GetButtonDown("Jump"))
+
+        if (Input.GetAxis("Jump") != 0)
         {
             v.y = jumpSpeed;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            v.y = jumpSpeed;
+            animator.SetBool("jump", true);
         }
 
         rb.velocity = v;
@@ -106,7 +117,7 @@ public class PlayerScript : MonoBehaviour
             GameManagerScript.score += 1;
             audioSource.Play();
             other.gameObject.SetActive(false);
-            Instantiate(bombParticle,transform.position, Quaternion.identity);
+            Instantiate(bombParticle, transform.position, Quaternion.identity);
         }
     }
 
