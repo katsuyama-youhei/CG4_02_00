@@ -45,7 +45,7 @@ public class GameManagerScript : MonoBehaviour
         score = 0;
 
         Vector3 position = Vector3.zero;
-        Vector3 BGPosition =  new Vector3(0.0f,0.0f,3.0f);
+        Vector3 BGPosition =  new Vector3(0.0f,0.0f,1.0f);
         LoadCSV();
         int lenY = map.GetLength(0);
         int lenX = map.GetLength(1);
